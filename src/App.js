@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FruitList } from "./components/fruitList/FruitList";
+import { Input } from "./components/input/Input";
+import { useState } from "react";
+import { DataFruit } from "./components/dataFruits/DataFruit";
 
 function App() {
+  const [dtInput, setDtInput] = useState("");
+
+  const getDtInput = (value) => {
+    setDtInput(value);
+  };
+
+  const tempArray = DataFruit.filter((value) => value.name.includes(dtInput));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Input getDtInput={getDtInput} />
+      <FruitList tempArray={tempArray} dtInput={dtInput} />
+    </>
   );
 }
 
