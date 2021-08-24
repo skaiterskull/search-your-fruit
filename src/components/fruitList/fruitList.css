@@ -1,0 +1,17 @@
+/* .accordion {
+  opacity: 0.9;
+  color: azure;
+  font-weight: bolder;
+} */
+
+.accordion-item:nth-child(odd) {
+  background: lightskyblue;
+  opacity: 0.9;
+  border: none;
+}
+
+.accordion-item:nth-child(even) {
+  background: yellowgreen;
+  opacity: 0.9;
+  border: none;
+}
