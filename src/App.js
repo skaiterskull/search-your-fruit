@@ -14,6 +14,8 @@ function App() {
 
   const tempArray = DataFruit.filter((value) => value.name.includes(dtInput));
 
+
+
   return (
     <>
       <Input getDtInput={getDtInput} />

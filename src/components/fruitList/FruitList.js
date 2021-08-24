@@ -8,17 +8,27 @@ export const FruitList = ({ tempArray, dtInput }) => {
     <Container>
       <ListGroup variant="flush">
         {dtInput == ""
-          ? DataFruit.map((value) => {
-              return <ListGroup.Item>{value.name}</ListGroup.Item>;
+          ? DataFruit.map((value, i) => {
+              return (
+                <ListGroup.Item
+                  key={i}
+                  variant={i % 2 == 0 ? "info" : "danger"}
+                >
+                  {value.name}
+                </ListGroup.Item>
+              );
             })
-          : tempArray.map((value) => {
-              return <ListGroup.Item>{value.name}</ListGroup.Item>;
+          : tempArray.map((value, i) => {
+              return (
+                <ListGroup.Item
+                  key={i}
+                  variant={i % 2 == 0 ? "info" : "danger"}
+                >
+                  {value.name}
+                </ListGroup.Item>
+              );
             })}
       </ListGroup>
     </Container>
   );
 };
-
-// {tempArray.map((value) => {
-//     ;
-//   })}
