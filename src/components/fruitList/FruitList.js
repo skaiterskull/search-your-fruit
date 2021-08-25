@@ -12,7 +12,9 @@ export const FruitList = ({ tempArray, dtInput }) => {
           ? DataFruit.map((value, i) => {
               return (
                 <Accordion.Item eventKey={i}>
-                  <Accordion.Header>{value.name}</Accordion.Header>
+                  <Accordion.Header>
+                    {value.icon} {value.name}
+                  </Accordion.Header>
                   <Accordion.Body>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
