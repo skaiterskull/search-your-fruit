@@ -7,12 +7,24 @@ import { DataFruit } from "../dataFruits/DataFruit";
 export const FruitList = ({ tempArray, dtInput }) => {
   return (
     <Container>
-      <Accordion defaultActiveKey="0">
+      <Accordion defaultActiveKey="0" flush>
         {dtInput == ""
           ? DataFruit.map((value, i) => {
               return (
-                <Accordion.Item eventKey={i}>
-                  <Accordion.Header>
+                <Accordion.Item
+                  eventKey={i}
+                  style={{
+                    backgroundColor: value.color,
+                    color: "white",
+                    fontWeight: "bolder",
+                    opacity: 0.9,
+                  }}
+                >
+                  <Accordion.Header
+                    style={{
+                      opacity: 0.9,
+                    }}
+                  >
                     {value.icon} {value.name}
                   </Accordion.Header>
                   <Accordion.Body>
@@ -30,8 +42,23 @@ export const FruitList = ({ tempArray, dtInput }) => {
             })
           : tempArray.map((value, i) => {
               return (
-                <Accordion.Item eventKey={i}>
-                  <Accordion.Header>{value.name}</Accordion.Header>
+                <Accordion.Item
+                  eventKey={i}
+                  eventKey={i}
+                  style={{
+                    backgroundColor: value.color,
+                    color: "white",
+                    fontWeight: "bolder",
+                    opacity: 0.9,
+                  }}
+                >
+                  <Accordion.Header
+                    style={{
+                      opacity: 0.9,
+                    }}
+                  >
+                    {value.icon} {value.name}
+                  </Accordion.Header>
                   <Accordion.Body>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
@@ -49,3 +76,5 @@ export const FruitList = ({ tempArray, dtInput }) => {
     </Container>
   );
 };
+
+//

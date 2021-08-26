@@ -1,14 +1,8 @@
-.accordion {
+.accordion-button {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: black;
 }
-
-.accordion-item:nth-child(odd) {
-  background: lightskyblue;
-  opacity: 0.9;
-  border: none;
-}
-
-.accordion-item:nth-child(even) {
-  background: yellowgreen !important;
-  opacity: 0.9;
-  border: none;
+.accordion-button:hover {
+  background: lightgray;
 }

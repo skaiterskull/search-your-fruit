@@ -2,34 +2,43 @@ export const DataFruit = [
   {
     icon: "🍎",
     name: "Apple",
-  },
-  {
-    icon: "🍌",
-    name: "Banana",
-  },
-  {
-    icon: "🍇",
-    name: "Grape",
-  },
-  {
-    icon: "🥭",
-    name: "Mango",
+    color: "red",
   },
   {
     icon: "🥑",
     name: "Avocado",
+    color: "green",
   },
+  {
+    icon: "🍌",
+    name: "Banana",
+    color: "orange",
+  },
+  {
+    icon: "🍒",
+    name: "Cherry",
+    color: "red",
+  },
+  {
+    icon: "🍇",
+    name: "Grape",
+    color: "purple",
+  },
+  {
+    icon: "🥭",
+    name: "Mango",
+    color: "orange",
+  },
+
   {
     icon: "🍊",
     name: "Orange",
+    color: "orange",
   },
 
   {
     icon: "🍉",
     name: "Watermelon",
-  },
-  {
-    icon: "🍒",
-    name: "Cherry",
+    color: "red",
   },
 ];
