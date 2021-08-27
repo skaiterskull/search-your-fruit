@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Form, Row, Col } from "react-bootstrap";
 
 export const Input = ({ getDtInput }) => {
   const handleOnChange = (e) => {
@@ -10,11 +10,17 @@ export const Input = ({ getDtInput }) => {
 
   return (
     <Container>
-      <div className="">
-        <label htmlFor="">Fruit Name : </label>
-        <span> </span>
-        <input type="text" name="name" onChange={handleOnChange}></input>
-      </div>
+      <Form>
+        <Col className="mb-4 mt-4">
+          <Form.Control
+            size="lg"
+            type="text"
+            name="name"
+            onChange={handleOnChange}
+            placeholder="Place your name here e.g apple, mango, banana"
+          />
+        </Col>
+      </Form>
     </Container>
   );
 };

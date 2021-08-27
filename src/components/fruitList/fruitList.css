@@ -3,6 +3,7 @@
   font-weight: bolder;
   color: black;
 }
+
 .accordion-button:hover {
   background: lightgray;
 }

@@ -4,6 +4,7 @@ import { FruitList } from "./components/fruitList/FruitList";
 import { Input } from "./components/input/Input";
 import { useState } from "react";
 import { DataFruit } from "./components/dataFruits/DataFruit";
+import { Container } from "react-bootstrap";
 
 function App() {
   const [dtInput, setDtInput] = useState("");
@@ -16,6 +17,10 @@ function App() {
 
   return (
     <>
+      <Container className="mt-3">
+        <h1>Search your Fruit 🍎 🍌 🥭</h1>
+      </Container>
+
       <Input getDtInput={getDtInput} />
       <FruitList tempArray={tempArray} dtInput={dtInput} />
     </>
