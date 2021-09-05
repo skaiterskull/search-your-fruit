@@ -2,18 +2,28 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FruitList } from "./components/fruitList/FruitList";
 import { Input } from "./components/input/Input";
-import { useState } from "react";
-import { DataFruit } from "./components/dataFruits/DataFruit";
+import { useState, useEffect } from "react";
+
 import { Container } from "react-bootstrap";
+import { fecthAllList } from "../src/apis/listApi.js";
 
 function App() {
   const [dtInput, setDtInput] = useState("");
+  const [dtFruit, setDtFuit] = useState([]);
+
+  useEffect(() => {
+    const loadAllData = async () => {
+      const { result } = await fecthAllList();
+      setDtFuit(result);
+    };
+    loadAllData();
+  }, []);
 
   const getDtInput = (value) => {
     setDtInput(value);
   };
 
-  const tempArray = DataFruit.filter((value) => value.name.includes(dtInput));
+  const tempArray = dtFruit.filter((value) => value.name.includes(dtInput));
 
   return (
     <>
@@ -22,7 +32,7 @@ function App() {
       </Container>
 
       <Input getDtInput={getDtInput} />
-      <FruitList tempArray={tempArray} dtInput={dtInput} />
+      <FruitList tempArray={tempArray} dtInput={dtInput} dtFruit={dtFruit} />
     </>
   );
 }

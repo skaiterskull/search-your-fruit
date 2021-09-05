@@ -2,14 +2,13 @@ import React from "react";
 import "./fruitList.css";
 
 import { Accordion, Container } from "react-bootstrap";
-import { DataFruit } from "../dataFruits/DataFruit";
 
-export const FruitList = ({ tempArray, dtInput }) => {
+export const FruitList = ({ tempArray, dtInput, dtFruit }) => {
   return (
     <Container>
       <Accordion defaultActiveKey="0" flush>
         {dtInput == ""
-          ? DataFruit.map((value, i) => {
+          ? dtFruit.map((value, i) => {
               return (
                 <Accordion.Item
                   eventKey={i}
