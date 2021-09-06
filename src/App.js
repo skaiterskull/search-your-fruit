@@ -9,12 +9,21 @@ import { fecthAllList } from "../src/apis/listApi.js";
 
 function App() {
   const [dtInput, setDtInput] = useState("");
-  const [dtFruit, setDtFuit] = useState([]);
+  const [dtFruit, setDtFruit] = useState([]);
 
   useEffect(() => {
     const loadAllData = async () => {
       const { result } = await fecthAllList();
-      setDtFuit(result);
+      const sortedData = result.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
+      setDtFruit(sortedData);
     };
     loadAllData();
   }, []);
@@ -23,7 +32,9 @@ function App() {
     setDtInput(value);
   };
 
-  const tempArray = dtFruit.filter((value) => value.name.includes(dtInput));
+  const tempArray = dtFruit.filter((value) =>
+    value.name.toLowerCase().includes(dtInput.toLowerCase())
+  );
 
   return (
     <>
